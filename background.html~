@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+<iframe id="dataiframe" src="#void"></iframe>
+
+<script src="jquery-2.1.0.min.js"></script>
+<script src="background.js"></script>
+</body>
+
+</html>
