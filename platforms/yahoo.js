@@ -1,6 +1,7 @@
 function yahooAdvStats(bList, pList, batterstatids, pitcherstatids){
 	var batterids = new Array(); var batblanks = 0;
-	var month = 0; var year = new Date().getFullYear(); var season = year;
+//	var month = 0; var year = new Date().getFullYear(); var season = year;
+	var month = 0; var year = 2015; var season = year;
 	if 	( document.location.href.indexOf("stat2=D")>-1 ) month = 0; // Today
 	else if ( document.location.href.indexOf("stat2=L7")>-1 ) month = 1; // Last 7 days
 	else if ( document.location.href.indexOf("stat2=L14")>-1 ) month = 2; // Last 14 days
@@ -125,15 +126,20 @@ function yahoo(options){
 
 	var leagueid = document.location.pathname.split("/")[2];
 	console.log( "[Highlights+] League ID:", leagueid );
-	console.log( "[Highlights+] Enable advanced metrics:", options.advMetricsEnabled );
+	console.log( "[Highlights+] Remove DF ads:", options.removeDFads );
+	console.log( "[Highlights+] Show advanced stats:", options.advMetricsEnabled );
 
 // UI cleanup
 var yads = document.getElementsByClassName("yadslug"); // AdChoices litter
 while ( yads[0] ) yads[0].parentNode.removeChild(yads[0]);
 blueArray = document.getElementsByClassName("ysf-player-video-link"); // Blue video icons
 while ( blueArray[0] ) blueArray[0].parentNode.removeChild(blueArray[0]);
+if ( options.removeDFads || options.removeDFads == undefined ){
+	dfads = document.getElementsByClassName("df-ad"); // DF ads
+	while ( dfads[0] ) dfads[0].parentNode.removeChild(dfads[0]);
+};
 // Options
-document.getElementById("league-info").getElementsByTagName("span")[0].innerHTML += " | <a title='Highlights+ Options' id='options_info'>Highlights+ v"+chrome.runtime.getManifest().version+"</a>";
+document.getElementById("league-info").getElementsByTagName("span")[0].innerHTML += " | <a style='color:lightblue' title='Highlights+ Options' id='options_info'>Highlights+ v"+chrome.runtime.getManifest().version+"</a>";
 document.getElementById("options_info").addEventListener("click", function(){
 	var optionsWindow = window.open(chrome.extension.getURL("options.html"));
 });
@@ -183,7 +189,24 @@ for ( var i=0 ; i<pitcherList.length ; i++ ){
 	} );
 };
 
-if ( options.advMetricsEnabled || options.advMetricsEnabled == undefined ){
+
+// My Team on Twitter
+/*
+if ( true ){
+	// Add button
+	btnfirst = document.getElementsByClassName("Btn Btn-short")[4];
+	btnfirst.insertAdjacentHTML("beforeBegin", "<a class='Btn Btn-short Mend-med' id='twitterBtn'>My Team on Twitter</a> ");
+	playerstring = "";
+	twitterurl = "";
+	document.getElementById("twitterBtn").addEventListener( "click", function(){
+		console.log("twitter btn clicked!");
+	});
+};
+*/
+
+
+// Advanced Stats
+if ( options.advMetricsEnabled ){
 	if ( options.batterheaders == undefined ) var batterheaders = ["BABIP", "ISO", "BB%"];
 	else var batterheaders = options.batterheaders;
 	if ( options.pitcherheaders == undefined ) var pitcherheaders = ["FIP", "xFIP", "tERA"];
@@ -288,7 +311,7 @@ if ( options.advMetricsEnabled || options.advMetricsEnabled == undefined ){
 		pitcherstatids[i] = pitcherstatids[i].substring(4);
 	};
 	btnfirst = document.getElementsByClassName("Btn Btn-short")[4];
-	btnfirst.insertAdjacentHTML("beforeBegin", "<a class='Btn Btn-short' id='retrieveBtn'>Retrieve Advanced Stats</a> ");
+	btnfirst.insertAdjacentHTML("beforeBegin", "<a class='Btn Btn-short Mend-med' id='retrieveBtn'>Retrieve Advanced Stats</a> ");
 	document.getElementById("retrieveBtn").addEventListener( "click", function(){ yahooAdvStats(batterList, pitcherList, batterstatids, pitcherstatids) } );
 };
 
@@ -315,7 +338,7 @@ for ( var i=0 ; i<playerList.length ; i++ ){
 	});
 };
 
-if ( options.advMetricsEnabled || options.advMetricsEnabled == undefined ){
+if ( options.advMetricsEnabled ){
 	if ( options.batterheaders == undefined ) var batterheaders = ["BABIP", "ISO", "BB%"];
 	else var batterheaders = options.batterheaders;
 	if ( options.pitcherheaders == undefined ) var pitcherheaders = ["FIP", "xFIP", "tERA"];
@@ -378,7 +401,10 @@ if ( options.advMetricsEnabled || options.advMetricsEnabled == undefined ){
 	for ( var i=0 ; i<playerstatids.length ; i++ ){
 		playerstatids[i] = playerstatids[i].substring(4);
 	};
-	document.getElementById("iconlegend").parentNode.insertAdjacentHTML("beforeBegin", "<div class='Grid-u Fl-end' style='padding-left: 25px'><a id='retrieveBtn' href='#'>Retrieve Advanced Stats</a></div>");
+//	document.getElementById("iconlegend").parentNode.insertAdjacentHTML("beforeBegin", "<div class='Grid-u Fl-end' style='padding-left: 25px'><a id='retrieveBtn' href='#'>Retrieve Advanced Stats</a></div>");
+	var projectionspowered = document.getElementById("pagenav0").parentNode.parentNode.getElementsByClassName("Fl-end")[0];
+//	projectionspowered.innerHTML += " | <span class='F-shade Fz-xxs'><a id='retrieveBtn' href='#'>Retrieve Advanced Stats</a></span>";
+	projectionspowered.insertAdjacentHTML("beforeend", " | <span class='F-shade Fz-xxs'><a id='retrieveBtn' href='#'>Retrieve Advanced Stats</a></span>");
 	document.getElementById("retrieveBtn").addEventListener("click", function(){
 		yahooAdvPlayer(playerList, isBatters, playerstatids);
 	});

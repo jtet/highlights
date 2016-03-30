@@ -1,4 +1,7 @@
 function save_options(){
+	// Remove DF ads
+	var removeDFads = document.getElementById("removeDF").checked;
+	// Advanced stats
 	var advMetricsEnabled = document.getElementById("advMetrics").checked;
 	var batterStats = document.getElementsByClassName("batterStat");
 	var pitcherStats = document.getElementsByClassName("pitcherStat");
@@ -18,16 +21,21 @@ function save_options(){
 			pitcherstatids.push( pitcherStats[i].getAttribute("id") );
 		};
 	};
-	chrome.storage.sync.set( { advMetricsEnabled: advMetricsEnabled, batterheaders: batterheaders, pitcherheaders: pitcherheaders, batterstatids: batterstatids, pitcherstatids: pitcherstatids }, function(){
+
+	chrome.storage.sync.set( { removeDFads: removeDFads, advMetricsEnabled: advMetricsEnabled, batterheaders: batterheaders, pitcherheaders: pitcherheaders, batterstatids: batterstatids, pitcherstatids: pitcherstatids }, function(){
 		var status = document.getElementById("status");
 		status.textContent = "Options saved.";
 		console.log("Batter headers:", batterheaders, "\nBatter stat IDs:", batterstatids);
 		console.log("Pitcher headers:", pitcherheaders, "\nPitcher stat IDs:", pitcherstatids);
+		console.log("removeDFads:", removeDFads);
 	});
 }
 
 function restore_options(){
-	chrome.storage.sync.get( { advMetricsEnabled: true, batterheaders: ["BABIP", "ISO", "BB%"], pitcherheaders: ["FIP", "xFIP", "tERA"], batterstatids: ["bat_41", "bat_40", "bat_34"], pitcherstatids: ["pit_45", "pit_62", "pit_61"] }, function(items){
+	chrome.storage.sync.get( { removeDFads: true, advMetricsEnabled: false, batterheaders: ["BABIP", "ISO", "BB%"], pitcherheaders: ["FIP", "xFIP", "tERA"], batterstatids: ["bat_41", "bat_40", "bat_34"], pitcherstatids: ["pit_45", "pit_62", "pit_61"] }, function(items){
+		// Remove DF ads
+		document.getElementById("removeDF").checked = items.removeDFads;
+		// Advanced stats
 		document.getElementById("advMetrics").checked = items.advMetricsEnabled;
 		var batterstatids = items.batterstatids;
 		var pitcherstatids = items.pitcherstatids;
