@@ -24,7 +24,7 @@ if ( document.location.hostname == "m.mlb.com" ){
 	var vidPlayerWrap = document.getElementById("videoPlayerWrap");
 	vidPlayerWrap.setAttribute("style", "padding: 0px");
 	// These require a delay
-//	setTimeout(function(){
+	setTimeout(function(){
 		if ( document.getElementById("featuredPlaylist_1") ){
 			var featured_1 = document.getElementById("featuredPlaylist_1");	featured_1.parentNode.removeChild(featured_1);
 		};
@@ -43,5 +43,18 @@ if ( document.location.hostname == "m.mlb.com" ){
 		if ( document.getElementById("topicCarousel_4") ){
 			var carousel_4 = document.getElementById("topicCarousel_4");	carousel_4.parentNode.removeChild(carousel_4);
 		};
-//	}, 1500);
+	}, 1500);
 };
+
+
+/*
+if ( document.location.hostname == "twitter.com" ){
+};
+*/
+
+
+/*
+if ( document.location.hostname == "football.fantasysports.yahoo.com" ){
+
+};
+*/

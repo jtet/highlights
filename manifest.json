@@ -2,8 +2,8 @@
   "manifest_version": 2,
 
   "name": "Highlights+",
-  "description": "Fantasy utility that integrates player highlights and advanced player metrics into Yahoo, ESPN, Fantrax, FanDuel and DraftKings",
-  "version": "1.4.1",
+  "description": "Up-to-the-minute video highlights for your fantasy team.",
+  "version": "1.4.6",
   "options_page": "options.html",
   "web_accessible_resources": [
 	  "options.html",
@@ -14,8 +14,7 @@
 	"http://baseball.fantasysports.yahoo.com/",
 	"http://*.mlb.com/",
 	"http://www.fangraphs.com/",
-	"http://fangraphs.com/",
-	"http://www.baseball-reference.com/"
+	"http://fangraphs.com/"
   ],
   "background": {
 	"page": "background.html"
@@ -29,7 +28,7 @@
   },
   "content_scripts": [
     	{
-	  "matches": ["http://baseball.fantasysports.yahoo.com/b1/*", "https://baseball.fantasysports.yahoo.com/b1/*", "http://games.espn.go.com/*", "http://www.fantrax.com/fantasy/*", "https://www.fanduel.com/*", "https://www.draftkings.com/lineup", "https://www.draftkings.com/contest/*", "http://m.mlb.com/video/*"],
+	  "matches": ["http://football.fantasysports.yahoo.com/f1/*", "https://football.fantasysports.yahoo.com/f1/*", "http://baseball.fantasysports.yahoo.com/b1/*", "https://baseball.fantasysports.yahoo.com/b1/*", "http://games.espn.go.com/*", "http://www.fantrax.com/fantasy/*", "https://www.fanduel.com/*", "https://www.draftkings.com/lineup", "https://www.draftkings.com/contest/*", "http://m.mlb.com/video/*"],
 	  "js": ["jquery-2.1.0.min.js", "helpers.js", "/platforms/yahoo.js", "/platforms/espn.js", "/platforms/fantrax.js", "/platforms/dailies.js", "content.js"]
   	}
   ]

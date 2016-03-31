@@ -14,7 +14,7 @@ for ( var i=0 ; i<playerList.length ; i++ ){
 			console.log(response.farewell);
 		});
 	});
-};	
+};
 
 }
 

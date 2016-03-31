@@ -1,3 +1,9 @@
+chrome.runtime.onInstalled.addListener( function(details){
+	if ( details.reason == "install" ){
+		chrome.tabs.create({url: "options.html"});
+	};
+});
+
 chrome.runtime.onMessage.addListener( function(request, sender, sendResponse){
 	if (request.greeting == "showPageIcon"){
 		chrome.pageAction.show(sender.tab.id);
