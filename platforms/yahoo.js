@@ -1,14 +1,14 @@
 function yahooAdvStats(bList, pList, batterstatids, pitcherstatids){
 	var batterids = new Array(); var batblanks = 0;
-//	var month = 0; var year = new Date().getFullYear(); var season = year;
-	var month = 0; var year = 2015; var season = year;
+	var month = 0; var year = new Date().getFullYear(); var season = year;
+//	var month = 0; var year = 2015; var season = year;
 	if 	( document.location.href.indexOf("stat2=D")>-1 ) month = 0; // Today
 	else if ( document.location.href.indexOf("stat2=L7")>-1 ) month = 1; // Last 7 days
 	else if ( document.location.href.indexOf("stat2=L14")>-1 ) month = 2; // Last 14 days
 	else if ( document.location.href.indexOf("stat2=L30")>-1 ) month = 3; // Last 30 days
 	else if ( document.location.href.indexOf("stat2=S_"+year)>-1 ) season = year; // This year
-	else if ( document.location.href.indexOf("stat2=S_"+year-1)>-1 ) season = year-1; // Last year
-	else if ( document.location.href.indexOf("stat2=S_"+year-2)>-1 ) season = year-2; // Two years ago
+	else if ( document.location.href.indexOf("stat2=S_"+(year-1))>-1 ) season = year-1; // Last year
+	else if ( document.location.href.indexOf("stat2=S_"+(year-2))>-1 ) season = year-2; // Two years ago
 	var batterurl = "http://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=all&qual=0&type=c,"+batterstatids.toString()+"&season="+season+"&month="+month+"&season1="+season+"&ind=0&team=0&rost=0&age=0&filter=&players=";
 	for ( var i=0 ; i<bList.length ; i++ ){
 		$.get( "http://www.fangraphs.com/quickplayersearch.aspx?name="+bList[i], function(data){
@@ -84,8 +84,8 @@ function yahooAdvStats(bList, pList, batterstatids, pitcherstatids){
 
 function yahooAdvPlayer(pList, isBat, playerstatids){
 	var playerids = new Array(); var blanks = 0;
-	if ( isBat )	var playerurl = "http://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=all&qual=0&type=c,"+playerstatids.toString()+"&season=2015&month=0&season1=2015&ind=0&team=0&rost=0&age=0&filter=&players=";
-	else		var playerurl = "http://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=all&qual=0&type=c,"+playerstatids.toString()+"&season=2015&month=0&season1=2015&ind=0&team=0&rost=0&age=0&filter=&players=";
+	if ( isBat )	var playerurl = "http://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=all&qual=0&type=c,"+playerstatids.toString()+"&season=2016&month=0&season1=2016&ind=0&team=0&rost=0&age=0&filter=&players=";
+	else		var playerurl = "http://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=all&qual=0&type=c,"+playerstatids.toString()+"&season=2016&month=0&season1=2016&ind=0&team=0&rost=0&age=0&filter=&players=";
 	for ( var i=0 ; i<pList.length ; i++ ){
 		$.get( "http://www.fangraphs.com/quickplayersearch.aspx?name="+pList[i], function(data){
 			var playerQPS = document.createElement("div");

@@ -68,9 +68,9 @@
 		<br><input class="pitcherStat" name="GB/FB" id="pit_46" type="checkbox"> GB/FB
 		<br><input class="pitcherStat" name="WAR" id="pit_59" type="checkbox"> WAR
 		<br><input class="pitcherStat" name="WPA" id="pit_63" type="checkbox"> WPA
-		<br><input class="pitcherStat" name="WPA" id="pit_120" type="checkbox"> K%
-		<br><input class="pitcherStat" name="WPA" id="pit_121" type="checkbox"> BB%
-		<br><input class="pitcherStat" name="WPA" id="pit_122" type="checkbox"> SIERA
+		<br><input class="pitcherStat" name="K%" id="pit_120" type="checkbox"> K%
+		<br><input class="pitcherStat" name="BB%" id="pit_121" type="checkbox"> BB%
+		<br><input class="pitcherStat" name="SIERA" id="pit_122" type="checkbox"> SIERA
 		</td></table>
 	</div>
 
@@ -82,11 +82,11 @@
 <br>
 
 	<div class="options">
-		Twitter: <a target="_blank" href="https://twitter.com/philiannuzzo">@philiannuzzo</a>
+		Twitter: <a target="_blank" href="https://twitter.com/philiannuzzo">@philiannuzzo</a> | GitHub: <a target="_blank" href="https://github.com/philiannuzzo/highlights">https://github.com/philiannuzzo/highlights</a>
 	</div>
 
 	<div class="options">
-		Please share with your league!  Discuss the extension <a href='http://forums.rotoworld.com/index.php?showtopic=574250'>here</a> or at <a href="http://www.reddit.com/r/fantasybaseball">/r/fantasybaseball</a>.
+		Discuss the extension <a href='http://forums.rotoworld.com/index.php?showtopic=574250'>here</a> or at <a href="http://www.reddit.com/r/fantasybaseball">/r/fantasybaseball</a> | Advanced stats retrieved from <a href="http://www.fangraphs.com">Fangraphs.com</a>.
 	</div>
 
 <script src="options.js"></script>
