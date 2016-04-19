@@ -310,7 +310,7 @@ if ( options.advMetricsEnabled ){
 	for ( var i=0 ; i<pitcherstatids.length ; i++ ){
 		pitcherstatids[i] = pitcherstatids[i].substring(4);
 	};
-	btnfirst = document.getElementsByClassName("Btn Btn-short")[4];
+	btnfirst = document.getElementsByClassName("Btn Btn-short")[2];
 	btnfirst.insertAdjacentHTML("beforeBegin", "<a class='Btn Btn-short Mend-med' id='retrieveBtn'>Retrieve Advanced Stats</a> ");
 	document.getElementById("retrieveBtn").addEventListener( "click", function(){ yahooAdvStats(batterList, pitcherList, batterstatids, pitcherstatids) } );
 };
