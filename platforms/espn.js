@@ -135,6 +135,11 @@ document.getElementById("options_link").addEventListener("click", function(){
 });
 // Highlights
 if ( document.location.pathname == "/flb/clubhouse" ){
+	// Re-do buttons
+	var locurl = document.location.href.split("&view")[0];
+	var ptfiltersmenuleft = document.getElementById("ptfiltersmenuleft");
+	ptfiltersmenuleft.innerHTML = "";
+	ptfiltersmenuleft.innerHTML = "<div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=today'>Today</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=last7'>Last 7</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=last15'>Last 15</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=last30'>Last 30</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=currSeason'>"+new Date().getFullYear()+"</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=bvp'>BVP</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=lastSeason'>"+(new Date().getFullYear()-1)+"</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=projections'>Projections</a></div>";
 	// Grab list of batters
 	var batterTDList = document.getElementById("playertable_0").getElementsByClassName("playertablePlayerName");
 	var batterList = new Array();
@@ -167,6 +172,20 @@ if ( document.location.pathname == "/flb/clubhouse" ){
 	};
 };
 if ( document.location.pathname == "/flb/freeagency" ){
+	var locurl = document.location.href.split("#&seasonId=2016").join("");
+	var locurl = locurl.split("&view")[0];
+	// Re-do Batters/Pitchers buttons
+	var positionbar = document.getElementsByClassName("filterToolsOptionSet")[0];
+	var batli = positionbar.getElementsByTagName("li")[0];
+	var pitli = positionbar.getElementsByTagName("li")[1];
+	batli.innerHTML = "";
+	batli.innerHTML = "<a href='"+locurl+"&slotCategoryGroup=1'>Batters</a>";
+	pitli.innerHTML = "";
+	pitli.innerHTML = "<a href='"+locurl+"&slotCategoryGroup=2'>Pitchers</a>";
+	// Re-do buttons
+	var ptfiltersmenuleft = document.getElementById("ptfiltersmenuleft");
+	ptfiltersmenuleft.innerHTML = "";
+	ptfiltersmenuleft.innerHTML = "<div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=freeagency&version=currSeason'>"+new Date().getFullYear()+"</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=freeagency&version=last7'>Last 7</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=freeagency&version=last15'>Last 15</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=freeagency&version=last30'>Last 30</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=freeagency&version=bvp'>BVP</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=freeagency&version=lastSeason'>"+(new Date().getFullYear()-1)+"</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=freeagency&version=projections'>Projections</a></div>";
 	// Grab list of players
 	var playerTDList = document.getElementsByClassName("playertablePlayerName");
 	var playerList = new Array();

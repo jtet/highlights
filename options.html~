@@ -18,10 +18,6 @@
 		<input type="checkbox" name="removeDF" id="removeDF" checked>Remove Daily Fantasy ads (Yahoo)
 	</div>
 
-<!--	<div class="options" style="padding-top: 0px">
-		<input type="checkbox" name="myTeamTwitter" id="myTeamTwitter" checked>Show My Team on Twitter (Yahoo/ESPN)
-	</div> -->
-
 	<div class="options" style="padding-top: 0px">
 		<input type="checkbox" name="advMetrics" id="advMetrics" checked>Show advanced stats (Yahoo/ESPN) - <i>beta</i>
 	</div>
@@ -83,9 +79,8 @@
 <br>
 
 	<div class="options">
-		Twitter: <a target="_blank" href="https://twitter.com/philiannuzzo">@philiannuzzo</a><br><br>
-		GitHub: <a target="_blank" href="https://github.com/philiannuzzo/highlights">https://github.com/philiannuzzo/highlights</a><br><br>
-		Discuss the extension at <a href="http://www.reddit.com/r/fantasybaseball">/r/fantasybaseball</a>. Advanced stats retrieved from <a href="http://www.fangraphs.com">Fangraphs.com</a>.
+		Twitter: <a target="_blank" href="https://twitter.com/philiannuzzo">@philiannuzzo</a> | GitHub: <a target="_blank" href="https://github.com/philiannuzzo/highlights">https://github.com/philiannuzzo/highlights</a> | Discuss the extension at <a href="http://www.reddit.com/r/fantasybaseball">/r/fantasybaseball</a><br><br>
+		Advanced stats retrieved from <a href="http://www.fangraphs.com">Fangraphs.com</a>
 	</div>
 
 <script src="options.js"></script>
