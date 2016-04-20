@@ -55,6 +55,5 @@ if ( document.location.hostname == "twitter.com" ){
 
 /*
 if ( document.location.hostname == "football.fantasysports.yahoo.com" ){
-
 };
 */

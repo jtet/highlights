@@ -45,15 +45,3 @@ if ( document.location.hostname == "m.mlb.com" ){
 		};
 	}, 1500);
 };
-
-
-/*
-if ( document.location.hostname == "twitter.com" ){
-};
-*/
-
-
-/*
-if ( document.location.hostname == "football.fantasysports.yahoo.com" ){
-};
-*/
