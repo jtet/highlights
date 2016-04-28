@@ -12,7 +12,7 @@ chrome.storage.sync.get(null, function(result){
 });
 
 
-if ( document.location.hostname == "m.mlb.com" ){
+if ( document.location.hostname == "m.mlb.com" && document.location.href.indexOf("highlights=true")>-1 ){
 	var meta = document.getElementById("videoMetaView");
 	meta.parentNode.removeChild(meta);
 	var header = document.getElementById("site-header");

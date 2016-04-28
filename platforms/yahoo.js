@@ -132,10 +132,10 @@ function yahoo(options){
 // UI cleanup
 var yads = document.getElementsByClassName("yadslug"); // AdChoices litter
 while ( yads[0] ) yads[0].parentNode.removeChild(yads[0]);
-blueArray = document.getElementsByClassName("ysf-player-video-link"); // Blue video icons
+var blueArray = document.getElementsByClassName("ysf-player-video-link"); // Blue video icons
 while ( blueArray[0] ) blueArray[0].parentNode.removeChild(blueArray[0]);
 if ( options.removeDFads || options.removeDFads == undefined ){
-	dfads = document.getElementsByClassName("df-ad"); // DF ads
+	var dfads = document.getElementsByClassName("df-ad"); // DF ads
 	while ( dfads[0] ) dfads[0].parentNode.removeChild(dfads[0]);
 };
 // Options
@@ -148,7 +148,7 @@ document.getElementById("options_info").addEventListener("click", function(){
 	    (IF pathname ends in a digit AND starts with correct substring) OR contains 'team' **/
 	if ( ( /\d$/.test(document.location.pathname) && document.location.pathname.indexOf("/b1/"+leagueid+"/")==0 ) || document.location.pathname.indexOf("team")>-1 ){
 
-// Alter nav links
+// Re-do filter buttons
 var navItems = document.getElementsByClassName("Subnav-main navlist")[0].getElementsByClassName("Navitem");
 for ( var i=0 ; i<navItems.length ; i++ ){
 	navItems[i].getElementsByTagName("a")[0].removeAttribute("class");
