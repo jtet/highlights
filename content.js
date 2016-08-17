@@ -4,7 +4,7 @@ chrome.runtime.sendMessage({greeting: "showPageIcon"}, function(response) { // t
 });
 chrome.storage.sync.get(null, function(result){
 	if ( document.location.hostname == "baseball.fantasysports.yahoo.com" ) yahoo(result);
-	else if ( document.location.hostname == "games.espn.go.com" )		espn(result);
+	else if ( document.location.hostname == "games.espn.com" )		espn(result);
 	else if ( document.location.hostname == "www.fantrax.com" )		fantrax();
 //	else if ( document.location.hostname == "www.fanduel.com" && document.getElementById("scoring-table-name").innerHTML.indexOf("MLB") > -1 ) fanduel();
 	else if ( document.location.hostname == "www.fanduel.com" )		fanduel();
@@ -42,6 +42,18 @@ if ( document.location.hostname == "m.mlb.com" && document.location.href.indexOf
 		};
 		if ( document.getElementById("topicCarousel_4") ){
 			var carousel_4 = document.getElementById("topicCarousel_4");	carousel_4.parentNode.removeChild(carousel_4);
+		};
+		if ( document.getElementById("topicCarousel_5") ){
+			var carousel_5 = document.getElementById("topicCarousel_5");	carousel_5.parentNode.removeChild(carousel_5);
+		};
+		if ( document.getElementById("topicCarousel_6") ){
+			var carousel_6 = document.getElementById("topicCarousel_6");	carousel_6.parentNode.removeChild(carousel_6);
+		};
+		if ( document.getElementById("topicCarousel_7") ){
+			var carousel_7 = document.getElementById("topicCarousel_7");	carousel_7.parentNode.removeChild(carousel_7);
+		};
+		if ( document.getElementById("topicCarousel_8") ){
+			var carousel_8 = document.getElementById("topicCarousel_8");	carousel_8.parentNode.removeChild(carousel_8);
 		};
 	}, 1500);
 };

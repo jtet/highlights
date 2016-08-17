@@ -3,7 +3,7 @@
 
   "name": "Highlights+",
   "description": "Up-to-the-minute video highlights for your fantasy team.",
-  "version": "1.5.01",
+  "version": "1.5.1",
   "options_page": "options.html",
   "web_accessible_resources": [
 	  "options.html",
@@ -12,6 +12,7 @@
   "permissions": [
 	"storage",
 	"http://baseball.fantasysports.yahoo.com/",
+	"http://games.espn.com/",
 	"http://*.mlb.com/",
 	"http://www.fangraphs.com/",
 	"http://fangraphs.com/"
@@ -28,7 +29,7 @@
   },
   "content_scripts": [
     	{
-	  "matches": ["http://football.fantasysports.yahoo.com/f1/*", "https://football.fantasysports.yahoo.com/f1/*", "http://baseball.fantasysports.yahoo.com/b1/*", "https://baseball.fantasysports.yahoo.com/b1/*", "http://games.espn.go.com/*", "http://www.fantrax.com/fantasy/*", "https://www.fanduel.com/*", "https://www.draftkings.com/lineup", "https://www.draftkings.com/contest/*", "http://m.mlb.com/video/*"],
+	  "matches": ["http://football.fantasysports.yahoo.com/f1/*", "https://football.fantasysports.yahoo.com/f1/*", "http://baseball.fantasysports.yahoo.com/b1/*", "https://baseball.fantasysports.yahoo.com/b1/*", "http://games.espn.com/*", "http://www.fantrax.com/fantasy/*", "https://www.fanduel.com/*", "https://www.draftkings.com/lineup", "https://www.draftkings.com/contest/*", "http://m.mlb.com/video/*"],
 	  "js": ["jquery-2.1.0.min.js", "helpers.js", "/platforms/yahoo.js", "/platforms/espn.js", "/platforms/fantrax.js", "/platforms/dailies.js", "content.js"]
   	}
   ]

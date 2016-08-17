@@ -133,6 +133,7 @@ document.getElementsByClassName("nav-main-breadcrumbs")[0].innerHTML = "<a title
 document.getElementById("options_link").addEventListener("click", function(){
 	var optionsWindow = window.open(chrome.extension.getURL("options.html"));
 });
+
 // Highlights
 if ( document.location.pathname == "/flb/clubhouse" ){
 
@@ -144,6 +145,9 @@ if ( document.location.pathname == "/flb/clubhouse" ){
 	ptfiltersmenuleft.innerHTML = "<div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=today'>Today</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=last7'>Last 7</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=last15'>Last 15</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=last30'>Last 30</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=currSeason'>"+new Date().getFullYear()+"</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=bvp'>BVP</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=lastSeason'>"+(new Date().getFullYear()-1)+"</a></div><div class='playertablefiltersmenucontainer'><a href='"+locurl+"&view=stats&context=clubhouse&version=projections'>Projections</a></div>";
 	*/
 
+	// TEST
+	console.log("TEST");
+
 	var currentanchor;
 	var anchorURL = "";
 	// Re-do lineup/day buttons
@@ -152,7 +156,8 @@ if ( document.location.pathname == "/flb/clubhouse" ){
 	for ( var i=0 ; i<dateslistitems.length ; i++ ){
 		if ( dateslistitems[i].firstChild.tagName == "A" ){
 			currentanchor = dateslistitems[i].firstChild;
-			anchorURL = "http://games.espn.go.com/flb/clubhouse?" + currentanchor.getAttribute("href").split("'")[1];
+//			anchorURL = "http://games.espn.go.com/flb/clubhouse?" + currentanchor.getAttribute("href").split("'")[1];
+			anchorURL = "http://games.espn.com/flb/clubhouse?" + currentanchor.getAttribute("href").split("'")[1];
 			datetext = currentanchor.innerHTML;
 			dateslistitems[i].innerHTML = "<a href='"+anchorURL+"'>"+datetext+"</a>";
 		};
@@ -163,11 +168,13 @@ if ( document.location.pathname == "/flb/clubhouse" ){
 	for ( var i=0 ; i<filterdivs.length ; i++ ){
 		if ( filterdivs[i].firstChild.tagName == "A" ){
 			currentanchor = filterdivs[i].firstChild;
-			anchorURL = "http://games.espn.go.com/flb/clubhouse?" + currentanchor.getAttribute("onclick").split("'")[1];
+//			anchorURL = "http://games.espn.go.com/flb/clubhouse?" + currentanchor.getAttribute("onclick").split("'")[1];
+			anchorURL = "http://games.espn.com/flb/clubhouse?" + currentanchor.getAttribute("onclick").split("'")[1];
 			filtertext = currentanchor.innerHTML;
 			filterdivs[i].innerHTML = "<a href='"+anchorURL+"'>"+filtertext+"</a>";
 		};
 	};
+
 	// Grab list of batters
 	var batterTDList = document.getElementById("playertable_0").getElementsByClassName("playertablePlayerName");
 	var batterList = new Array();
@@ -210,6 +217,7 @@ if ( document.location.pathname == "/flb/freeagency" ){
 	var pitli = positionbar.getElementsByTagName("li")[1];
 	batli.innerHTML = ""; batli.innerHTML = "<a href='"+locurl+"&slotCategoryGroup=1'>Batters</a>";
 	pitli.innerHTML = ""; pitli.innerHTML = "<a href='"+locurl+"&slotCategoryGroup=2'>Pitchers</a>";
+
 	/*
 	// Re-do buttons
 	var ptfiltersmenuleft = document.getElementById("ptfiltersmenuleft");
@@ -226,7 +234,7 @@ if ( document.location.pathname == "/flb/freeagency" ){
 	for ( var i=0 ; i<filterdivs.length ; i++ ){
 		if ( filterdivs[i].firstChild.tagName == "A" ){
 			currentanchor = filterdivs[i].firstChild;
-			anchorURL = "http://games.espn.go.com/flb/freeagency?" + currentanchor.getAttribute("onclick").split("'")[1];
+			anchorURL = "http://games.espn.com/flb/freeagency?" + currentanchor.getAttribute("onclick").split("'")[1];
 			filtertext = currentanchor.innerHTML;
 			filterdivs[i].innerHTML = "<a href='"+anchorURL+"'>"+filtertext+"</a>";
 		};
