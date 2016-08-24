@@ -3,7 +3,7 @@
 
   "name": "Highlights+",
   "description": "Up-to-the-minute video highlights for your fantasy team.",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "options_page": "options.html",
   "web_accessible_resources": [
 	  "options.html",

@@ -26,9 +26,15 @@ if ( document.location.hostname == "m.mlb.com" && document.location.href.indexOf
 	// These require a delay
 	setTimeout(function(){
 		if ( document.getElementById("featuredPlaylist_1") ){
-			var featured_1 = document.getElementById("featuredPlaylist_1");	featured_1.parentNode.removeChild(featured_1);
+			var featured_1 = document.getElementById("featuredPlaylist_1");
+			featured_1.parentNode.removeChild(featured_1);
 		};
-		if ( document.getElementById("topicCarousel_0") ){
+		var carArray = document.getElementsByClassName("carousel topic");
+		while ( carArray[0] ){
+			carArray[0].parentNode.removeChild(carArray[0]);
+		};
+
+/*		if ( document.getElementById("topicCarousel_0") ){
 			var carousel_0 = document.getElementById("topicCarousel_0");	carousel_0.parentNode.removeChild(carousel_0);
 		};
 		if ( document.getElementById("topicCarousel_1") ){
@@ -52,5 +58,10 @@ if ( document.location.hostname == "m.mlb.com" && document.location.href.indexOf
 		if ( document.getElementById("topicCarousel_7") ){
 			var carousel_7 = document.getElementById("topicCarousel_7");	carousel_7.parentNode.removeChild(carousel_7);
 		};
+		if ( document.getElementById("topicCarousel_8") ){
+			var carousel_8 = document.getElementById("topicCarousel_8");	carousel_8.parentNode.removeChild(carousel_8);
+		};
+*/
+
 	}, 1500);
 };
