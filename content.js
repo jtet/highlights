@@ -25,8 +25,8 @@ if ( document.location.hostname == "m.mlb.com" && document.location.href.indexOf
 	vidPlayerWrap.setAttribute("style", "padding: 0px");
 	// These require a delay
 	setTimeout(function(){
-		if ( document.getElementById("featuredPlaylist_1") ){
-			var featured_1 = document.getElementById("featuredPlaylist_1");
+		var featured_1 = document.getElementById("featuredPlaylist_1");
+		if ( featured_1 ){
 			featured_1.parentNode.removeChild(featured_1);
 		};
 		var carArray = document.getElementsByClassName("carousel topic");

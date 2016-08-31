@@ -25,43 +25,13 @@ if ( document.location.hostname == "m.mlb.com" && document.location.href.indexOf
 	vidPlayerWrap.setAttribute("style", "padding: 0px");
 	// These require a delay
 	setTimeout(function(){
+		var featured_1 = document.getElementById("featuredPlaylist_1");
 		if ( document.getElementById("featuredPlaylist_1") ){
-			var featured_1 = document.getElementById("featuredPlaylist_1");
 			featured_1.parentNode.removeChild(featured_1);
 		};
 		var carArray = document.getElementsByClassName("carousel topic");
 		while ( carArray[0] ){
 			carArray[0].parentNode.removeChild(carArray[0]);
 		};
-
-/*		if ( document.getElementById("topicCarousel_0") ){
-			var carousel_0 = document.getElementById("topicCarousel_0");	carousel_0.parentNode.removeChild(carousel_0);
-		};
-		if ( document.getElementById("topicCarousel_1") ){
-			var carousel_1 = document.getElementById("topicCarousel_1");	carousel_1.parentNode.removeChild(carousel_1);
-		};
-		if ( document.getElementById("topicCarousel_2") ){
-			var carousel_2 = document.getElementById("topicCarousel_2");	carousel_2.parentNode.removeChild(carousel_2);
-		};
-		if ( document.getElementById("topicCarousel_3") ){
-			var carousel_3 = document.getElementById("topicCarousel_3");	carousel_3.parentNode.removeChild(carousel_3);
-		};
-		if ( document.getElementById("topicCarousel_4") ){
-			var carousel_4 = document.getElementById("topicCarousel_4");	carousel_4.parentNode.removeChild(carousel_4);
-		};
-		if ( document.getElementById("topicCarousel_5") ){
-			var carousel_5 = document.getElementById("topicCarousel_5");	carousel_5.parentNode.removeChild(carousel_5);
-		};
-		if ( document.getElementById("topicCarousel_6") ){
-			var carousel_6 = document.getElementById("topicCarousel_6");	carousel_6.parentNode.removeChild(carousel_6);
-		};
-		if ( document.getElementById("topicCarousel_7") ){
-			var carousel_7 = document.getElementById("topicCarousel_7");	carousel_7.parentNode.removeChild(carousel_7);
-		};
-		if ( document.getElementById("topicCarousel_8") ){
-			var carousel_8 = document.getElementById("topicCarousel_8");	carousel_8.parentNode.removeChild(carousel_8);
-		};
-*/
-
 	}, 1500);
 };
