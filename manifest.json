@@ -10,12 +10,7 @@
   	  "videoIcon.png"
   ],
   "permissions": [
-	"storage",
-	"http://baseball.fantasysports.yahoo.com/",
-	"http://games.espn.com/",
-	"http://*.mlb.com/",
-	"http://www.fangraphs.com/",
-	"http://fangraphs.com/"
+	"storage"
   ],
   "background": {
 	"page": "background.html"

@@ -33,5 +33,5 @@ if ( document.location.hostname == "m.mlb.com" && document.location.href.indexOf
 		while ( carArray[0] ){
 			carArray[0].parentNode.removeChild(carArray[0]);
 		};
-	}, 1500);
+	}, 1000);
 };

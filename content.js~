@@ -24,14 +24,14 @@ if ( document.location.hostname == "m.mlb.com" && document.location.href.indexOf
 	var vidPlayerWrap = document.getElementById("videoPlayerWrap");
 	vidPlayerWrap.setAttribute("style", "padding: 0px");
 	// These require a delay
-	setTimeout(function(){
+//	setTimeout(function(){
 		var featured_1 = document.getElementById("featuredPlaylist_1");
-		if ( document.getElementById("featuredPlaylist_1") ){
+		if ( featured_1 ){
 			featured_1.parentNode.removeChild(featured_1);
 		};
 		var carArray = document.getElementsByClassName("carousel topic");
 		while ( carArray[0] ){
 			carArray[0].parentNode.removeChild(carArray[0]);
 		};
-	}, 1500);
+//	}, 1500);
 };
