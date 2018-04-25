@@ -11,9 +11,9 @@ function espnAdvStats(bList, pList, batterstatids, pitcherstatids){
 	else if ( document.location.href.indexOf("stat2=S_"+year-1)>-1 ) season = year-1; // Last year
 	else if ( document.location.href.indexOf("stat2=S_"+year-2)>-1 ) season = year-2; // Two years ago
 	*/
-	var batterurl = "http://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=all&qual=0&type=c,"+batterstatids.toString()+"&season="+season+"&month="+month+"&season1="+season+"&ind=0&team=0&rost=0&age=0&filter=&players=";
+	var batterurl = "https://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=all&qual=0&type=c,"+batterstatids.toString()+"&season="+season+"&month="+month+"&season1="+season+"&ind=0&team=0&rost=0&age=0&filter=&players=";
 	for ( var i=0 ; i<bList.length ; i++ ){
-		$.get( "http://www.fangraphs.com/quickplayersearch.aspx?name="+bList[i], function(data){
+		$.get( "https://www.fangraphs.com/quickplayersearch.aspx?name="+bList[i], function(data){
 			var batterQPS = document.createElement("div");
 			batterQPS.innerHTML = data;
 			var batterid = batterQPS.getElementsByTagName("a")[0].getAttribute("href").split("=")[1].split("&")[0];
@@ -47,9 +47,9 @@ function espnAdvStats(bList, pList, batterstatids, pitcherstatids){
 		});
 	};
 	var pitcherids = new Array(); var pitblanks = 0;
-	var pitcherurl = "http://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=all&qual=0&type=c,"+pitcherstatids.toString()+"&season="+season+"&month="+month+"&season1="+season+"&ind=0&team=0&rost=0&age=0&filter=&players=";
+	var pitcherurl = "https://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=all&qual=0&type=c,"+pitcherstatids.toString()+"&season="+season+"&month="+month+"&season1="+season+"&ind=0&team=0&rost=0&age=0&filter=&players=";
 	for ( var i=0 ; i<pList.length ; i++ ){
-		$.get( "http://www.fangraphs.com/quickplayersearch.aspx?name="+pList[i], function(data){
+		$.get( "https://www.fangraphs.com/quickplayersearch.aspx?name="+pList[i], function(data){
 			var pitcherQPS = document.createElement("div");
 			pitcherQPS.innerHTML = data;
 			var pitcherid = pitcherQPS.getElementsByTagName("a")[0].getAttribute("href").split("=")[1].split("&")[0];
@@ -87,10 +87,10 @@ function espnAdvStats(bList, pList, batterstatids, pitcherstatids){
 
 function espnAdvPlayer(pList, isBat, playerstatids){
 	var playerids = new Array(); var blanks = 0;
-	if ( isBat )	var playerurl = "http://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=all&qual=0&type=c,"+playerstatids.toString()+"&season=2016&month=0&season1=2016&ind=0&team=0&rost=0&age=0&filter=&players=";
-	else		var playerurl = "http://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=all&qual=0&type=c,"+playerstatids.toString()+"&season=2016&month=0&season1=2016&ind=0&team=0&rost=0&age=0&filter=&players=";
+	if ( isBat )	var playerurl = "https://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=all&qual=0&type=c,"+playerstatids.toString()+"&season=2016&month=0&season1=2016&ind=0&team=0&rost=0&age=0&filter=&players=";
+	else		var playerurl = "https://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=all&qual=0&type=c,"+playerstatids.toString()+"&season=2016&month=0&season1=2016&ind=0&team=0&rost=0&age=0&filter=&players=";
 	for ( var i=0 ; i<pList.length ; i++ ){
-		$.get( "http://www.fangraphs.com/quickplayersearch.aspx?name="+pList[i], function(data){
+		$.get( "https://www.fangraphs.com/quickplayersearch.aspx?name="+pList[i], function(data){
 			var playerQPS = document.createElement("div");
 			playerQPS.innerHTML = data;
 			var playerid = playerQPS.getElementsByTagName("a")[0].getAttribute("href").split("=")[1].split("&")[0];
@@ -146,7 +146,7 @@ if ( document.location.pathname == "/flb/clubhouse" ){
 	*/
 
 	// TEST
-	console.log("TEST");
+//	console.log("TEST");
 
 	var currentanchor;
 	var anchorURL = "";
@@ -390,7 +390,7 @@ if ( options.advMetricsEnabled && document.location.pathname == "/flb/clubhouse"
 	for ( var i=0 ; i<pitcherstatids.length ; i++ ){
 		pitcherstatids[i] = pitcherstatids[i].substring(4);
 	};
-	document.getElementById("ptfiltersmenuleft").innerHTML += "<div class='playertablefiltersmenucontainer'><a id='retrieveBtn'>Retrieve Advanced Stats</a></div>";
+	document.getElementById("ptfiltersmenuleft").innerHTML += "<div class='playertablefiltersmenucontainer'><a id='retrieveBtn' style='cursor:pointer'>Retrieve Advanced Stats</a></div>";
 	document.getElementById("retrieveBtn").addEventListener("click", function(){
 		console.log("retrieve btn clicked!");
 		espnAdvStats(batterList, pitcherList, batterstatids, pitcherstatids);
@@ -449,7 +449,7 @@ if ( options.advMetricsEnabled && document.location.pathname == "/flb/freeagency
 	};
 	if ( isBatters ) var playerstatids = batterstatids;
 	else var playerstatids = pitcherstatids;
-	document.getElementById("ptfiltersmenuleft").innerHTML += "<div class='playertablefiltersmenucontainer'><a id='retrieveBtn'>Retrieve Advanced Stats</a></div>";
+	document.getElementById("ptfiltersmenuleft").innerHTML += "<div class='playertablefiltersmenucontainer'><a id='retrieveBtn' style='cursor:pointer'>Retrieve Advanced Stats</a></div>";
 	document.getElementById("retrieveBtn").addEventListener("click", function(){
 		espnAdvPlayer(playerList, isBatters, playerstatids);
 	});

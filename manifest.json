@@ -10,7 +10,9 @@
   	  "videoIcon.png"
   ],
   "permissions": [
-	"storage"
+  "storage",
+  "https://www.fangraphs.com/",
+  "http://games.espn.com/"
   ],
   "background": {
 	"page": "background.html"
